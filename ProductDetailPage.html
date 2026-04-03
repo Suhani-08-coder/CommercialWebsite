@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail | Lost Commodities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="HomePage.css"> 
+    <link rel="stylesheet" href="ProductDetailPage.css"> 
+    <link rel="stylesheet" href="Global.css">
+    
+    <style>
+        /* Carousel specific style for PDP */
+        .pdp-carousel-item {
+            background: #f9f9f9;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pdp-carousel-item img, .pdp-carousel-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel-indicators [data-bs-target] {
+            background-color: var(--text-color);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            filter: invert(1);
+        }
+        .pdp-gallery {
+            border-right: 1px solid var(--border-color);
+        }
+        
+        /* Ensure cart drawer slide effect works if not in CSS file */
+        .cart-drawer {
+            transition: right 0.4s cubic-bezier(0.82, 0.01, 0.77, 0.41);
+        }
+        .cart-drawer.open {
+            right: 0 !important;
+        }
+        .cart-overlay.active {
+            display: block !important;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="pdp-page">
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="pdp-container-fluid">
+        <div class="row g-0">
+            <div class="col-md-7 pdp-gallery">
+                <div id="pdpMediaCarousel" class="carousel slide carousel-fade" data-bs-ride="false">
+                    <div class="carousel-indicators" id="pdpCarouselIndicators"></div>
+
+                    <div class="carousel-inner" id="pdpCarouselInner">
+                        <div class="carousel-item active">
+                            <div class="pdp-carousel-item">
+                                <p style="opacity: 0.5;">Loading Media...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#pdpMediaCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#pdpMediaCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-md-5 pdp-content">
+                <div class="sticky-content">
+                    <nav class="breadcrumb-nav">
+                        <a href="HomePage.html">Home</a> / <span id="pdpCategory">Category</span>
+                    </nav>
+
+                    <h1 class="pdp-title pdp-name">Loading...</h1>
+                    <p class="pdp-price">₹0</p>
+                    
+                    <div class="pdp-description">
+                        <p id="pdpDescription">Product details will appear here.</p>
+                    </div>
+
+                    <div class="size-section">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="label">Select Size</span>
+                            <button class="size-guide-link" style="background:none; border:none; text-decoration:underline; font-size:0.7rem; cursor:pointer;">Size Guide</button>
+                        </div>
+                        <div class="size-grid">
+                            <button class="size-btn">UK 7</button>
+                            <button class="size-btn active">UK 8</button>
+                            <button class="size-btn">UK 9</button>
+                            <button class="size-btn">UK 10</button>
+                        </div>
+                    </div>
+
+                    <div class="purchase-actions">
+                        <button class="btn-add-bag" onclick="addToCartAnimation()">Add to Bag</button>
+                        <button class="btn-wishlist">♡ Wishlist</button>
+                    </div>
+
+                    <div class="pdp-details-accordion mt-5">
+                        <details open>
+                            <summary style="cursor:pointer; padding: 10px 0; border-bottom: 1px solid var(--border-color); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Description</summary>
+                            <p id="dynamicStory" style="padding: 20px 0; font-size: 0.85rem; opacity: 0.7; line-height: 1.6;"></p>
+                        </details>
+                        <details>
+                            <summary style="cursor:pointer; padding: 10px 0; border-bottom: 1px solid var(--border-color); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Shipping & Returns</summary>
+                            <p style="padding: 20px 0; font-size: 0.85rem; opacity: 0.7;">Free delivery on all orders above ₹5000. Returns accepted within 7 days.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="pdp-suggestions">
+        <h3 class="section-label">You Might Also Like</h3>
+        <div class="grid-4-col">
+            <div class="product-item">
+                <a href="ProductDetailPage.html?id=kimono">
+                    <div class="img-wrap"><img src="./Dress/WhatsApp Image 2026-04-02 at 11.35.11.jpeg" alt="kimono"></div>
+                    <div class="info"><h5>Kimono Archive</h5><p>₹11,499</p></div>
+                </a>
+            </div>
+            <div class="product-item">
+                <a href="ProductDetailPage.html?id=No-Permission-fit">
+                    <div class="img-wrap"><img src="./Dress/WhatsApp Image 2026-04-02 at 11.28.21.jpeg" alt="fit"></div>
+                    <div class="info"><h5>No Permission Fit</h5><p>₹1,499</p></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header" style="display: flex; justify-content: space-between; align-items: center; padding: 20px; border-bottom: 1px solid var(--border-color);">
+            <h3>Your Bag (<span id="cartItemCount">0</span>)</h3>
+            <button class="close-cart" id="closeCart" style="background:none; border:none; font-size: 1.5rem; cursor:pointer;">&times;</button>
+        </div>
+        <div class="cart-body" id="cartItemsContainer" style="flex: 1; overflow-y: auto; padding: 20px;">
+            <p class="empty-msg">Your bag is currently empty.</p>
+        </div>
+        <div class="cart-footer" style="padding: 20px; border-top: 1px solid var(--border-color);">
+            <div class="subtotal" style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">₹0</span>
+            </div>
+            <button class="checkout-btn" style="width:100%; background:var(--text-color); padding: 15px; border:none; cursor:pointer;">
+                <a href="./CheckoutPage.html" style="color:white; text-decoration:none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem;">Proceed to Checkout</a>
+            </button>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="Product.js"></script> 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('id');
+            
+            const productData = typeof products !== 'undefined' ? products : (typeof allProducts !== 'undefined' ? allProducts : null);
+            const data = productData ? productData[productId] : null;
+
+            if (data) {
+                document.title = `${data.name} | Lost Commodities`;
+                document.querySelector('.pdp-name').innerText = data.name;
+                document.querySelector('.pdp-price').innerText = data.price;
+                document.getElementById('pdpCategory').innerText = data.category;
+                document.getElementById('pdpDescription').innerText = data.description;
+                document.getElementById('dynamicStory').innerText = data.description;
+
+                const carouselInner = document.getElementById('pdpCarouselInner');
+                const indicators = document.getElementById('pdpCarouselIndicators');
+                carouselInner.innerHTML = ""; 
+                indicators.innerHTML = "";
+
+                let slideIndex = 0;
+
+                if (data.video && data.video !== "") {
+                    addSlide(data.video, true, slideIndex);
+                    slideIndex++;
+                }
+
+                if (data.images && data.images.length > 0) {
+                    data.images.forEach(imgSrc => {
+                        addSlide(imgSrc, false, slideIndex);
+                        slideIndex++;
+                    });
+                }
+
+                function addSlide(src, isVideo, index) {
+                    const activeClass = index === 0 ? 'active' : '';
+                    const btn = document.createElement('button');
+                    btn.type = "button";
+                    btn.setAttribute('data-bs-target', '#pdpMediaCarousel');
+                    btn.setAttribute('data-bs-slide-to', index);
+                    if(index === 0) btn.className = "active";
+                    indicators.appendChild(btn);
+                    
+                    const itemDiv = document.createElement('div');
+                    itemDiv.className = `carousel-item ${activeClass}`;
+                    
+                    if (isVideo) {
+                        itemDiv.innerHTML = `
+                            <div class="pdp-carousel-item">
+                                <video autoplay muted loop playsinline>
+                                    <source src="${src}" type="video/mp4">
+                                </video>
+                            </div>`;
+                    } else {
+                        itemDiv.innerHTML = `
+                            <div class="pdp-carousel-item">
+                                <img src="${src}" class="d-block w-100" alt="Product Image">
+                            </div>`;
+                    }
+                    carouselInner.appendChild(itemDiv);
+                }
+            } else {
+                document.querySelector('.pdp-name').innerText = "Product Not Found";
+            }
+        });
+
+        function addToCartAnimation() {
+            const params = new URLSearchParams(window.location.search);
+            const productId = params.get('id');
+            const productData = typeof products !== 'undefined' ? products : (typeof allProducts !== 'undefined' ? allProducts : null);
+            const data = productData ? productData[productId] : null;
+
+            if (!data) return;
+
+            const cartDrawer = document.getElementById('cartDrawer');
+            const cartOverlay = document.getElementById('cartOverlay');
+            
+            if (cartDrawer && cartOverlay) {
+                cartDrawer.classList.add('open');
+                cartOverlay.classList.add('active');
+            }
+
+            const container = document.getElementById('cartItemsContainer');
+            const emptyMsg = container.querySelector('.empty-msg');
+            if (emptyMsg) emptyMsg.style.display = 'none';
+
+            // Get first image safely
+            const itemImg = (data.images && data.images.length > 0) ? data.images[0] : '';
+
+            const itemHTML = `
+                <div class="cart-item" style="display: flex; gap: 15px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                    <img src="${itemImg}" style="width: 70px; height: 90px; object-fit: cover; background: #f4f4f4;">
+                    <div>
+                        <h4 style="font-size: 0.8rem; margin: 0; text-transform: uppercase;">${data.name}</h4>
+                        <p style="font-size: 0.75rem; opacity: 0.7; margin: 5px 0;">${data.price}</p>
+                        <p style="font-size: 0.6rem; letter-spacing: 1px;">QTY: 1</p>
+                    </div>
+                </div>
+            `;
+            container.insertAdjacentHTML('afterbegin', itemHTML);
+
+            document.getElementById('cartItemCount').innerText = "1";
+            document.getElementById('cartSubtotal').innerText = data.price;
+        }
+
+        // Close Cart Handlers
+        document.getElementById('closeCart').addEventListener('click', () => {
+            document.getElementById('cartDrawer').classList.remove('open');
+            document.getElementById('cartOverlay').classList.remove('active');
+        });
+
+        document.getElementById('cartOverlay').addEventListener('click', () => {
+            document.getElementById('cartDrawer').classList.remove('open');
+            document.getElementById('cartOverlay').classList.remove('active');
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="navbar.js"></script>
+    <script src="HomePage.js"></script>
+    <script src="Footer.js"></script> 
+</body>
+</html>

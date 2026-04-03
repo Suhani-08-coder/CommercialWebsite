@@ -1,0 +1,145 @@
+/* Shop Page Specific */
+.shop-page { background: var(--bg-color); }
+
+.shop-header {
+    padding: 60px 5% 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.page-title {
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Filter Bar Styling */
+.filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.filter-left { display: flex; gap: 25px; }
+
+.filter-btn {
+    background: none;
+    border: none;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-color);
+    opacity: 0.4;
+    padding: 5px 0;
+    position: relative;
+    transition: 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    opacity: 1;
+}
+
+.filter-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -11px; left: 0;
+    width: 100%; height: 1px;
+    background: var(--text-color);
+}
+
+.sort-select {
+    background: transparent;
+    border: none;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    outline: none;
+    cursor: pointer;
+}
+
+/* Product Grid Styling */
+.shop-grid-container {
+    padding: 40px 5%;
+}
+
+.shop-product-card {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.img-container {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: #f7f7f7;
+    position: relative;
+}
+
+.primary-img, .secondary-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease, transform 1s ease;
+}
+
+.secondary-img {
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0; /* Shuru mein chhupi hui */
+}
+
+/* Hover Effect: Show Second Image */
+.shop-product-card:hover .secondary-img {
+    opacity: 1;
+}
+.shop-product-card:hover .primary-img {
+    transform: scale(1.05);
+}
+
+.badge-new {
+    position: absolute;
+    top: 15px; left: 15px;
+    background: var(--text-color);
+    color: var(--bg-color);
+    font-size: 0.6rem;
+    padding: 5px 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-meta {
+    padding: 15px 0;
+}
+
+.p-name {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.p-price {
+    font-size: 0.75rem;
+    opacity: 0.6;
+}
+
+.product-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .filter-left { 
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding-bottom: 15px;
+        width: 100%;
+    }
+    .filter-bar { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .page-title { text-align: left; }
+}

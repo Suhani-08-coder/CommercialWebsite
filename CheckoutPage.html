@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Lost Commodities</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+     <link rel="stylesheet" href="HomePage.css">
+    <link rel="stylesheet" href="ChechkoutPage.css">
+    <link rel="stylesheet" href="Global.css">
+</head>
+<body>
+
+    <header class="checkout-header">
+        <a href="HomePage.html" class="logo-text">LOST COMMODITIES</a>
+    </header>
+    <div id="navbar-placeholder"></div>
+
+
+
+    <main class="container checkout-container">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <section class="checkout-section">
+                    <h2 class="section-title">Shipping Information</h2>
+                    <form id="checkoutForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control-custom" placeholder="First Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control-custom" placeholder="Last Name" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="email" class="form-control-custom" placeholder="Email Address" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control-custom" placeholder="Full Address" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control-custom" placeholder="City" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control-custom" placeholder="Pincode" required>
+                            </div>
+                        </div>
+
+                        <h2 class="section-title mt-5">Payment Method</h2>
+                        <div class="payment-options">
+                            <label class="payment-card">
+                                <input type="radio" name="payment" checked>
+                                <span class="custom-radio"></span>
+                                <span>UPI (GPay, PhonePe)</span>
+                            </label>
+                            <label class="payment-card">
+                                <input type="radio" name="payment">
+                                <span class="custom-radio"></span>
+                                <span>Credit / Debit Card</span>
+                            </label>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="order-summary-card">
+                    <h3 class="summary-title">Your Order</h3>
+                    <div id="checkoutItems" class="summary-items">
+                        </div>
+
+                    <div class="summary-pricing">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal</span>
+                            <span id="summarySubtotal">₹0</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Shipping</span>
+                            <span class="text-success">FREE</span>
+                        </div>
+                        <div class="total-row d-flex justify-content-between mt-4">
+                            <span>Total</span>
+                            <strong id="summaryTotal">₹0</strong>
+                        </div>
+                    </div>
+
+                    <button class="place-order-btn" onclick="processOrder()">Complete Purchase</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="footer-placeholder"></div>
+
+    <script src="products.js"></script>
+    
+
+    
+    <script>
+        // Logic to fetch cart from LocalStorage/Variable
+        // For now, let's assume we show the same cart logic
+        document.addEventListener('DOMContentLoaded', () => {
+            // Yahan hum Cart items load karenge jo user ne Bag mein add kiye hain
+        });
+
+        function processOrder() {
+            alert('Thank you for your order! Your commodities are being prepared.');
+            window.location.href = "HomePage.html";
+        }
+    </script>
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script> 
+</body>
+</html>

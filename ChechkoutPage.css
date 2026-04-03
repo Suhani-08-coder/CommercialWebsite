@@ -1,0 +1,292 @@
+.checkout-header {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.checkout-container {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Custom Form Styling */
+.form-control-custom {
+    width: 100%;
+    padding: 15px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-control-custom:focus {
+    border-bottom-color: var(--text-color);
+}
+
+/* Payment Cards */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-card {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.payment-card:hover {
+    border-color: var(--text-color);
+}
+
+/* Order Summary Box */
+.order-summary-card {
+    background: #fbfbfb;
+    padding: 40px;
+    position: sticky;
+    top: 50px;
+}
+
+body.dark-mode .order-summary-card {
+    background: #151515;
+}
+
+.summary-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.total-row {
+    font-size: 1.2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.place-order-btn {
+    width: 100%;
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 20px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* Dark Mode support for inputs */
+body.dark-mode .form-control-custom {
+    color: #fff;
+}.checkout-header {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.checkout-container {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Custom Form Styling */
+.form-control-custom {
+    width: 100%;
+    padding: 15px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-control-custom:focus {
+    border-bottom-color: var(--text-color);
+}
+
+/* Payment Cards */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-card {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.payment-card:hover {
+    border-color: var(--text-color);
+}
+
+/* Order Summary Box */
+.order-summary-card {
+    background: #fbfbfb;
+    padding: 40px;
+    position: sticky;
+    top: 50px;
+}
+
+body.dark-mode .order-summary-card {
+    background: #151515;
+}
+
+.summary-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.total-row {
+    font-size: 1.2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.place-order-btn {
+    width: 100%;
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 20px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* Dark Mode support for inputs */
+body.dark-mode .form-control-custom {
+    color: #fff;
+}.checkout-header {
+    text-align: center;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.checkout-container {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Custom Form Styling */
+.form-control-custom {
+    width: 100%;
+    padding: 15px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-control-custom:focus {
+    border-bottom-color: var(--text-color);
+}
+
+/* Payment Cards */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.payment-card {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.payment-card:hover {
+    border-color: var(--text-color);
+}
+
+/* Order Summary Box */
+.order-summary-card {
+    background: #fbfbfb;
+    padding: 40px;
+    position: sticky;
+    top: 50px;
+}
+
+body.dark-mode .order-summary-card {
+    background: #151515;
+}
+
+.summary-title {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.total-row {
+    font-size: 1.2rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.place-order-btn {
+    width: 100%;
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 20px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* Dark Mode support for inputs */
+body.dark-mode .form-control-custom {
+    color: #fff;
+}
